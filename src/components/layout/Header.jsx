@@ -1,4 +1,4 @@
-import { ChevronDown, Menu, X, MessageSquare, ShoppingBag, Building2, Car, GraduationCap, Coins } from "lucide-react";
+import { ChevronDown, Menu, X, ShoppingBag, Building2, Car, GraduationCap, Coins } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -31,21 +31,20 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-xl shadow-sm py-2" : "bg-white py-4"
+      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 lg:h-20">
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-[#4338ca] rounded-xl flex items-center justify-center text-white transform group-hover:rotate-3 transition-transform">
-                <MessageSquare className="w-6 h-6 fill-white" />
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#a855f7] rounded-full border-2 border-white"></div>
-            </div>
-            <span className="text-2xl font-bold text-[#1e1b4b] tracking-tight">
+            <img 
+              src="/assets/logo/company-logo.svg" 
+              alt="Mask Chat Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-xl font-semibold text-gray-900 tracking-tight">
               mask-chat
             </span>
           </Link>
@@ -54,7 +53,7 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             {/* Products Dropdown */}
             <div className="relative group">
-              <button className="flex items-center gap-1.5 text-gray-600 hover:text-[#4338ca] font-medium py-2 transition-colors">
+              <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#4338ca] font-medium py-2 transition-colors">
                 Products <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" />
               </button>
 
@@ -77,7 +76,7 @@ export default function Header() {
 
             {/* Industries Dropdown */}
             <div className="relative group">
-              <button className="flex items-center gap-1.5 text-gray-600 hover:text-[#4338ca] font-medium py-2 transition-colors">
+              <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#4338ca] font-medium py-2 transition-colors">
                 Industries <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" />
               </button>
 
@@ -98,20 +97,20 @@ export default function Header() {
               </div>
             </div>
 
-            <Link to="/about" className="text-gray-600 hover:text-[#4338ca] font-medium transition-colors">About Us</Link>
-            <Link to="/pricing" className="text-gray-600 hover:text-[#4338ca] font-medium transition-colors">Pricing</Link>
-            <Link to="/resources" className="text-gray-600 hover:text-[#4338ca] font-medium transition-colors">Resources</Link>
+            <Link to="/about" className="text-gray-700 hover:text-[#4338ca] font-medium transition-colors">About Us</Link>
+            <Link to="/pricing" className="text-gray-700 hover:text-[#4338ca] font-medium transition-colors">Pricing</Link>
+            <Link to="/resources" className="text-gray-700 hover:text-[#4338ca] font-medium transition-colors">Resources</Link>
           </nav>
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/contact-us"
-              className="px-6 py-2.5 rounded-xl font-semibold text-gray-700 bg-white border border-gray-200 hover:border-gray-300 hover:bg-gray-50 shadow-sm transition-all"
+              className="px-6 py-2.5 rounded-lg font-medium text-gray-700 bg-white border border-gray-200 hover:border-gray-300 hover:bg-gray-50 shadow-sm transition-all"
             >
               Contact us
             </Link>
-            <button className="px-6 py-2.5 rounded-xl font-semibold text-white bg-gradient-to-r from-[#4338ca] to-[#3b82f6] hover:shadow-lg hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-0.5">
+            <button className="px-6 py-2.5 rounded-lg font-medium text-white bg-[#4338ca] hover:bg-[#3730a3] shadow-sm transition-all">
               Book a demo
             </button>
           </div>
